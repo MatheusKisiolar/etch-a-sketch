@@ -1,6 +1,6 @@
 const container = document.querySelector("#container");
 
-let boxesPerSide = 32;
+let boxesPerSide = 128;
 
 const totalBoxes = boxesPerSide * boxesPerSide;
 
@@ -9,20 +9,14 @@ for (let i = 0; i < totalBoxes; i++) {
     box.classList.add("box");
     box.style = `width: ${512/boxesPerSide}px; height: ${512/boxesPerSide}px;`;
     box.addEventListener("mouseover", paint);
-    box.addEventListener("click", paintOne);
+    box.addEventListener("mousedown", paint);
     container.appendChild(box);
 }
 
-let mouseDown = false;
-document.body.onmousedown = () => (mouseDown = true);
-document.body.onmouseup = () => (mouseDown = false);
-
 function paint(e){
-    if (mouseDown){
+    if (e.type === "mouseover" && e.buttons === 1 || e.type === "mousedown" && e.buttons === 1){
         e.target.style.backgroundColor = "black";
+    } else if (e.type === "mouseover" && e.buttons == 2 || e.type === "mousedown" && e.buttons === 2){
+        e.target.style.backgroundColor = "rgb(240, 240, 240)";
     }  
-}
-
-function paintOne(e){
-    e.target.style.backgroundColor = "black";
 }
