@@ -1,10 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+body {
+  background-color: #264653;
+}
+
 h1 {
+  color: white;
   text-align: center;
 }
 
 #container {
-  width: 512px;
-  height: 512px;
-  border: 1px solid black;
+  width: 516px;
+  height: 516px;
+  border: 2px solid #203a46;
+  box-shadow: 0 0 8px 4px #203a46d8;
   margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  flex: auto;
+  background-color: rgb(240, 240, 240)
 }
