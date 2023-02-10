@@ -10,7 +10,14 @@
 </head>
 <body>
   <h1 id="title">Etch a Sketch</h1>
+  <button id="clear-button">Clear</button>
   <!-- onmousedown="return false;" prevents dragging divs and causing a bug -->
   <div id="container" onmousedown="return false;" oncontextmenu="return false;"></div>
+  <div id="size-container">
+    <button id="decrease-size-button">-</button>
+    <p id="current-size"></p>
+    <button id="increase-size-button">+</button>
+  </div>
+  <p id="controls-text">left-click to paint, right-click to erase</p>
 </body>
 </html>
